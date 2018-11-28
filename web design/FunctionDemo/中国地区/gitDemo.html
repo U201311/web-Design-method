@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChinaAddress</title>
+</head>
+<body>
+<div>
+    <fieldset id="city_china_val">
+        <p>所在地区：
+            <select class="province other" data-first-title="选择省">
+                <option value="">请选择</option>
+                <option value="选择省" selected>选择省</option>
+            </select>
+            <select class="city" data-first-title="选择市">
+                <option value="">请选择</option>
+                <option value="选择市" selected>选择市</option>
+            </select>
+            <select class="area" data-first-title="选择地区">
+                <option value="">请选择</option>
+                <option value="选择区" selected>选择区</option>
+            </select>
+        </p>
+    </fieldset>
+</div>
+</body>
+<!--  引用文件的路径根据自己项目的位置，自行修改
+<script src="../vendor/jquery/jquery.min.js"></script>
+<!-- <script src="http://cdn.staticfile.org/zepto/1.0/zepto.min.js"></script> -->
+<script src="../js/jquery.cxselect.js"></script>
+<script>
+    (function() {
+        var urlChina = '../js/cityData.min.json';
+        $.cxSelect.defaults.url = urlChina;
+        // 设置默认值及选项标题
+        $('#city_china_val').cxSelect({
+            selects: ['province', 'city', 'area'],
+            emptyStyle: 'none'
+        });
+    })();
+</script>
+</html>
